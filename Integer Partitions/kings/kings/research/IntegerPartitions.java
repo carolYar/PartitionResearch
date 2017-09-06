@@ -1,11 +1,11 @@
-package kings.research.summerseventeen;
+package kings.research;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class IntegerPartition {
+public class IntegerPartitions {
 	
     /**
      * partition returns a list of int[] that represent all distinct partitions of n.
@@ -70,7 +70,7 @@ public class IntegerPartition {
     			int ans = input.nextInt();
 
 
-    			List<int[]> integerOne = IntegerPartition.partition(ans);
+    			List<int[]> integerOne = IntegerPartitions.partition(ans);
 
     			int count = 1;
 
