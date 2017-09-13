@@ -25,7 +25,13 @@ public class IntegerPartitions {
         //System.out.println("partition " + n + ", partial solution: " + partial);
         if (n == 0) {
             // Complete solution is held in 'partial' --> add it to list of solutions
-            partitions.add(toArray(partial));
+        	int lastListIndex = partial.size() - 1;
+        	//gets rid of all the partitions with multiple rows of ones
+        	if(partial.size() == 1 || (partial.get(lastListIndex) + partial.get(lastListIndex - 1)) > 2) {
+        		if(partial.size() == partial.get(0))
+        		partitions.add(toArray(partial));
+        	}
+            
         } else {
             // Iterate through all numbers i less than n.
             // Avoid duplicate solutions by ensuring that the partial array is always non-increasing
@@ -77,7 +83,11 @@ public class IntegerPartitions {
     			for(int[] i : integerOne) {
     				System.out.println("Partition " + count + ": ");
     				for(int p : i) {
-    					System.out.println(p);
+    					System.out.print(p);
+    					for(int j = 0; j < p; j++) {
+    						System.out.print("*");
+    					}
+    					System.out.println();
     				}
     				System.out.println("");
     				count++;
