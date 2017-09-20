@@ -90,6 +90,9 @@ public class IntegerPartitions {
     					System.out.println();
     				}
     				System.out.println("");
+    				CountRepeatingParts.countRepeatingPartsOfArray(i);
+    				
+    				System.out.println();
     				count++;
     			}
 
